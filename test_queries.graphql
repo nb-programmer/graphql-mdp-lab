@@ -1,0 +1,51 @@
+#Create new item
+mutation {
+  createAuthor(input: {
+    author_name: "J. K. Rowling"
+    author_phone: "123456789"
+    author_email: "abc@123.com"
+  }){
+    id 
+    author_name
+  }
+}
+
+
+#Read one item
+query {
+  getAuthor(id: "4e98468b-0478-4208-b2e0-4f2a14dad8c4") {
+    author_name,
+    author_phone,
+    author_email
+  }
+}
+
+
+#Read all items
+query {
+  getAuthors {
+    id
+    author_name
+    author_phone
+    author_email
+  }
+}
+
+
+#Modify item
+mutation {
+  updateAuthor(id: "4e98468b-0478-4208-b2e0-4f2a14dad8c4", input: {
+    author_name: "Test name"
+  }){
+    id
+    author_name
+    author_phone
+    author_email
+  }
+}
+
+
+#Remove item
+mutation {
+  deleteAuthor(id: "4e98468b-0478-4208-b2e0-4f2a14dad8c4")
+}

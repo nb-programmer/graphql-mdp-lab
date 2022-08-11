@@ -1,0 +1,36 @@
+########## Author object ##########
+
+type Author {
+    id: ID
+    author_name: String!            # Cannot be null
+    author_phone: String
+    author_email: String
+}
+
+# Input without ID for creation (random ID is given)
+input AuthorCreateInput {
+    author_name: String!            # Cannot be null
+    author_phone: String
+    author_email: String
+}
+
+# Input with ID
+input AuthorModifyInput {
+    id: ID!
+    author_name: String
+    author_phone: String
+    author_email: String
+}
+
+### Query operations ###
+type Query {
+    getAuthor(id: ID): Author       # Return single Author given ID
+    getAuthors: [Author]            # Return all Author objects
+}
+
+### Create, Update, Remove operations ###
+type Mutation {
+    createAuthor(input: AuthorCreateInput): Author              # New author, excluding ID field
+    updateAuthor(id: ID!, input: AuthorCreateInput): Author     # Update existing author, given ID
+    deleteAuthor(id: ID!): ID                                   # Delete existing author, given ID
+}

@@ -1,3 +1,6 @@
-# lco-graphql
-A standard babel setup
-Starter project setup for upcoming crash courses
+# GraphQL API
+
+Project for Lab assignment on GraphQL
+
+Class: T.Y.MCA
+Roll: 2004
